@@ -1,0 +1,3 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+20:37:20	5748/5748	---MCZ	404	error ('Not%20Found')	text/html	date:Sun,%2009%20Dec%202018%2015:07:20%20GMT	https://demos.creative-tim.com/material-dashboard-angular2/upgrade	C:/My%20Web%20Sites/new/demos.creative-tim.com/material-dashboard-angular2/upgrade.0.delayed	(from )
+20:37:20	5251/5251	---MCZ	404	error ('Not%20Found')	text/html	date:Sun,%2009%20Dec%202018%2015:07:20%20GMT	https://demos.creative-tim.com/robots.txt		(from )
