@@ -100,6 +100,7 @@
 
         <br>
         <br>
+        <h3 class="title" style="margin-left: 20px">Customer Details</h3>
         <div class="col-lg-4 col-md-6">
             <div class="row">
 
@@ -117,8 +118,189 @@
             </div>
         </div>
 
-        <h3 class="title" style="margin-left: 20px">Customer Details</h3>
 
+
+        <div class="row" style="margin-left: 0px">
+            <div class="col-md-6">
+
+                <form role="form" id="contact-form" method="post">
+                    <div class="form-group">
+                        <label for="name" class="bmd-label-floating">Customer First Name</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="Lname" class="bmd-label-floating">Customer Second Name</label>
+                        <input type="text" class="form-control" id="Lname">
+                    </div>
+                    <div class="form-group">
+                        <label for="nic" class="bmd-label-floating">CustomerNIC</label>
+                        <input type="text" class="form-control" id="nic">
+                    </div>
+                    <div class="form-group">
+                        <label for="address" class="bmd-label-floating">CustomerAddress</label>
+                        <input type="text" class="form-control" id="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmails" class="bmd-label-floating">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmails">
+                        <span class="bmd-help">We'll never share your email with anyone else.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="bmd-label-floating">Phone</label>
+                        <input type="text" class="form-control" id="phone">
+                    </div>
+
+
+                </form>
+            </div>
+
+        </div>
+
+        <br>
+        <br>
+        <h3 class="title" style="margin-left: 20px">Vehicle Details</h3>
+        <div class="col-lg-4 col-md-6">
+            <div class="row">
+
+                <div class="col-md-5">
+                    <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#noticeModal2">
+                        <i class="material-icons">info_outline</i> Excisting Vehicle
+                    </button>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <button class="btn btn-primary btn-round" >
+                        <i class="material-icons">info_outline</i> New Vehicle
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-left: 0px">
+            <div class="col-md-6">
+
+                <form role="form" id="contact-form2" method="post">
+                    <div class="form-group">
+                        <label for="name" class="bmd-label-floating">Engine number</label>
+                        <input type="text" class="form-control" id="EngineNumber">
+                    </div>
+                    <div class="form-group">
+                        <label for="Lname" class="bmd-label-floating">Vehicle class</label>
+                        <input type="text" class="form-control" id="VehicleClass">
+                    </div>
+                    <div class="form-group">
+                        <label for="nic" class="bmd-label-floating">Model</label>
+                        <input type="text" class="form-control" id="Model">
+                    </div>
+                    <div class="form-group">
+                        <label for="address" class="bmd-label-floating">Year of manufacture</label>
+                        <input type="text" class="form-control" id="Yearofmanufacture">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="bmd-label-floating">Date of registration</label>
+                        <input type="text" class="form-control" id="Dateofregistration">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="bmd-label-floating">Fuel type</label>
+                        <input type="text" class="form-control" id="Fueltype">
+                    </div>
+
+
+                </form>
+            </div>
+
+        </div>
+
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <ul class="nav nav-pills nav-pills-icons" role="tablist">
+                    <!--
+                                    color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
+                                -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#schedule-1" role="tab" data-toggle="tab">
+                            <i class="material-icons">schedule</i> BreakDown Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#schedule-2" role="tab" data-toggle="tab">
+                            <i class="material-icons">schedule</i> Special Services
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="tab-content tab-space">
+                    <div class="tab-pane active" id="schedule-1">
+
+                        <form>
+                            <div class="form-group label-floating">
+                                <label class="form-control-label bmd-label-floating" for="message">Details Of BreakDown Service</label>
+                                <textarea class="form-control" rows="6" id="message"></textarea>
+                            </div>
+                        </form>
+
+                        <button class="btn btn-primary" style="margin-left: 600px">Save Details</button>
+                    </div>
+                    <div class="tab-pane" id="schedule-2">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Auto Body, Collision Repair and Paint
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                                <h5>                                    Auto body, collision repair, and paint services are designed for motorists who need assistance after a vehicle receives damage...
+                                </h5>
+                            </label>
+                        </div>
+                        <br>
+
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Brake Repair
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                                <h5>
+                                    A fully functioning brake system is crucial to your safety, the safety of your passengers, and the safety of other drivers on the road...
+                                </h5>
+                            </label>
+                        </div>
+                        <br>
+
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Cooling System Repair
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                                <h5>
+                                    The cooling system consists of a cooling fan, water pump, thermostat, radiator, heater core, heater valve, and various other parts...
+                                </h5>
+                            </label>
+                        </div>
+                        <br>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Starting, Charging & Batteries
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                                <h5>
+                                    Your vehicle’s starting and charging system is involved in regulating multiple electrical processes to start your vehicle's engine...
+                                </h5>
+                            </label>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary" style="margin-left: 600px">Save Details</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
       <!--</div>-->
         <br>
         <br>
@@ -126,9 +308,9 @@
 
     </div>
   </div>
-<div class="modal fade" id="noticeModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-notice" role="document">
-        <div class="modal-content">
+<div class="modal fade" id="noticeModal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog modal-notice" role="document" >
+        <div class="modal-content" style="width: 600px;">
             <div class="modal-header">
                 <h5 class="modal-title" style="margin-left: 50px">Search Excisting Customer</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -163,6 +345,94 @@
                                     <th class="text-center">#</th>
                                     <th></th>
                                     <th>Customer NIC</th>
+                                    <th>Name</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">
+
+                                    </td>
+                                    <td>Moleskine Agenda</td>
+                                    <td>Office</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">
+
+                                    </td>
+                                    <td>Stabilo Pen</td>
+                                    <td>Office</td>
+
+                                </tr>
+
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="instruction">
+                    <div class="row">
+                        <div class="col-md-8">
+
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer text-center">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="noticeModal2" tabindex="-1" role="dialog" >
+    <div class="modal-dialog modal-notice" role="document" >
+        <div class="modal-content" style="width: 600px;">
+            <div class="modal-header" >
+                <h5 class="modal-title" style="margin-left: 50px">Search Excisting Vehicle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="material-icons">clear</i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="instruction">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row" style="margin-left: 20px">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Customer Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-2" style="margin-top: 22px;margin-left: -30px">
+                                    <button type="button" class="btn btn-info btn-round" >Search Vehicle</button>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <br>
+                        <br>
+
+                        <div class="table-responsive" style="margin-left: 30px;">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th></th>
+                                    <th></th>
                                     <th>Name</th>
 
                                 </tr>
