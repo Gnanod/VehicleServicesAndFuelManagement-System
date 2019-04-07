@@ -61,7 +61,19 @@
                         <i class="material-icons">fingerprint</i>  LOGIN
                     </a>
                 </li>
+                <li class="dropdown nav-item">
+                    <a href="#pablo" class="profile-photo dropdown-toggle nav-link" data-toggle="dropdown">
+                        <div class="profile-photo-small">
+                            <img src="./assets/img/faces/avatar.jpg" alt="Circle Image" class="rounded-circle img-fluid" >
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-left">
 
+                        <a href="#pablo" class="dropdown-item">ViewProfile</a>
+                        <a href="#pablo" class="dropdown-item">EditProfile</a>
+                        <a href="#pablo" class="dropdown-item">LogOut</a>
+                    </div>
+                </li>
 
             </ul>
         </div>
@@ -73,10 +85,8 @@
         <div class="col-md-8 ml-auto mr-auto">
           <div class="brand text-center">
 
-            <h1>Vehicle Services </h1>
-              <h1>&</h1>
-              <h1> Fuel Management </h1>
-            <h3 class="title text-center">System</h3>
+            <h1>Add New Job Order </h1>
+
 
 
           </div>
@@ -88,78 +98,27 @@
   <div class="main main-raised">
     <div class="container">
 
-          <div class="col-md-10 ml-auto mr-auto">
-          <!--<h2 class="title"></h2>-->
-          <br>
-          <div class="card card-plain card-blog">
-              <div class="row">
-                  <div class="col-md-5">
-                      <div class="card-header card-header-image">
-                          <a href="#pablito">
-                              <img class="img" src="assets/images/VehicleShedule.jpg">
-                          </a>
-                      </div>
-                  </div>
-                  <div class="col-md-7">
-                      <!--<h6 class="card-category ">Enterprise</h6>-->
-                      <h3 class="card-title ">
-                          <a href="#pablo" class="text-info">Shedule Service</a>
-                      </h3>
-                      <p class="card-description">
-                          Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Today, it’s moving to a subscription model. Yet its own business model disruption is only part of the story — and…
-                          <a href="#pablo"> Read More </a>
-                      </p>
+        <br>
+        <br>
+        <div class="col-lg-4 col-md-6">
+            <div class="row">
 
-                  </div>
-              </div>
-          </div>
-          <div class="card card-plain card-blog">
-              <div class="row">
-                  <div class="col-md-7">
+                <div class="col-md-5">
+                    <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#noticeModal">
+                        <i class="material-icons">info_outline</i> Excisting Customer
+                    </button>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <button class="btn btn-primary btn-round" >
+                        <i class="material-icons">info_outline</i> New Customer
+                    </button>
+                </div>
+            </div>
+        </div>
 
+        <h3 class="title" style="margin-left: 20px">Customer Details</h3>
 
-
-                      <h3 class="card-title">
-                          <a href="#pablo" class="text-danger">Vehicle Parts</a>
-                      </h3>
-
-                      <p class="card-description">
-                          Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Today, it’s moving to a subscription model. Yet its own business model disruption is only part of the story — and…
-                          <a href="#pablo"> Read More </a>
-                      </p>
-
-                  </div>
-                  <div class="col-md-5">
-                      <div class="card-header card-header-image">
-                          <img class="img img-raised" src="assets/images/VehicleParts.jpg">
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-              <div class="card card-plain card-blog">
-                  <div class="row">
-                      <div class="col-md-5">
-                          <div class="card-header card-header-image">
-                              <a href="#pablito">
-                                  <img class="img" src="assets/images/fuelManagement.jpg">
-                              </a>
-                          </div>
-                      </div>
-                      <div class="col-md-7">
-                          <!--<h6 class="card-category ">Enterprise</h6>-->
-                          <h3 class="card-title ">
-                              <a href="#pablo" class="text-info">Fuel Management</a>
-                          </h3>
-                          <p class="card-description">
-                              Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Today, it’s moving to a subscription model. Yet its own business model disruption is only part of the story — and…
-                              <a href="#pablo"> Read More </a>
-                          </p>
-
-                      </div>
-                  </div>
-              </div>
-      </div>
       <!--</div>-->
         <br>
         <br>
@@ -167,6 +126,93 @@
 
     </div>
   </div>
+<div class="modal fade" id="noticeModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-notice" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="margin-left: 50px">Search Excisting Customer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="material-icons">clear</i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="instruction">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row" style="margin-left: 20px">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Customer Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-2" style="margin-top: 22px;margin-left: -30px">
+                                    <button type="button" class="btn btn-info btn-round" >Search Customer</button>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <br>
+                        <br>
+
+                        <div class="table-responsive" style="margin-left: 30px;">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th></th>
+                                    <th>Customer NIC</th>
+                                    <th>Name</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">
+
+                                    </td>
+                                    <td>Moleskine Agenda</td>
+                                    <td>Office</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">
+
+                                    </td>
+                                    <td>Stabilo Pen</td>
+                                    <td>Office</td>
+
+                                </tr>
+
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="instruction">
+                    <div class="row">
+                        <div class="col-md-8">
+
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer text-center">
+            </div>
+        </div>
+    </div>
+</div>
+
 <footer class="footer footer-default"  >
     <div class="container" >
         <nav class="float-left" id="footerStyle">
@@ -200,9 +246,6 @@
             </script>,
             made with <i class="material-icons">favorite</i> by
             <a href="https://www.creative-tim.com/" target="_blank">PHGH</a> for a better web.
-
-
-
 
         </div>
         <div id="social">
