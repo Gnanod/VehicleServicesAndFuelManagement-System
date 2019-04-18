@@ -221,18 +221,7 @@ public class AddJobOrderServlet extends HttpServlet {
 			fmodel=true;
 		}
 		
-		if(yearOfManufacture.isEmpty()) {
-
-			PrintWriter out =response.getWriter();
-			out.println("<script>");
-			out.println("$(document).ready(function(){");
-			out.println("swal ( 'Manufacture Year Field is' ,  'Empty Or Invalid(XXXX)' ,  'error' );");
-			out.println("});");
-			out.println("</script>");
-		}else {
-			fmodel=true;
-		}
-		System.out.println("yearOfManufacture"+yearOfManufacture);
+		
 		
 		if(yearOfManufacture.isEmpty()) {
 
@@ -277,7 +266,7 @@ public class AddJobOrderServlet extends HttpServlet {
 			PrintWriter out =response.getWriter();
 			out.println("<script>");
 			out.println("$(document).ready(function(){");
-			out.println("swal ( 'Registration Date Field is' ,  'Empty Or Invalid(XXXX)' ,  'error' );");
+			out.println("swal ( 'Problem Field is' ,  'Empty Or Invalid(XXXX)' ,  'error' );");
 			out.println("});");
 			out.println("</script>");
 			

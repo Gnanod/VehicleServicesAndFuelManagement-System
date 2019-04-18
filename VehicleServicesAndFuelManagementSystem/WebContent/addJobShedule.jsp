@@ -482,6 +482,7 @@
 									<th class="text-center">Year Of Manufacture</th>
 									<th class="text-center">Date Of Manufacture</th>
 									<th class="text-center">Fuel Type</th>
+									<th class="text-center">Delete</th>
                                 </tr>
                                 </thead>
                                 
@@ -504,6 +505,15 @@
 									<td class="text-center"><%=v.getDateOfRegistration()%></td>
 									<td class="text-center"><%=v.getFuelType()%></td>
 									
+									<td class="text-center">
+												<form action="DeleteVehicleServlet" method="post">
+														<input type="hidden" id="DeleteVehicleInput" name="deleteVehicle" value="<%=v.getVehicleId()%>"/>
+														<input type="submit" id="DeleteVe" value= "DeleteVehicle" class="btn btn-danger" /> 
+												</form>
+											
+									  
+									</td>
+						
                                 </tr>
                           
                           	<%
@@ -663,6 +673,8 @@
 	  $("#brand").prop('disabled', false);
 	  $("#Model").prop('disabled', false);
 	  $("#Yearofmanufacture").prop('disabled', false);
+	  $("#Dateofregistration").prop('disabled', false);
+	  $("#Fueltype").prop('disabled', false);
 	 
 });
   
@@ -727,6 +739,68 @@
 	  
   });
   
+  
+ 
+  $('#specialService').click(function(){
+	  var fname=$('#name').val();
+	  var lname =$('#Lname').val();
+	  var nic =$('#nic').val();
+	  var address =$('#address').val();
+	  var email =$('#email').val();
+	  var phone =$('#phone').val();
+	  var vehicleNumber =$('#vehicleNumber').val();
+	  var EngineNumber =$('#EngineNumber').val();
+	  var VehicleClass =$('#VehicleClass').val();
+	  var brand =$('#brand').val();
+	  var Model =$('#Model').val();
+	  var Yearofmanufacture =$('#Yearofmanufacture').val();
+	  var Dateofregistration =$('#Dateofregistration').val();
+	  var Fueltype =$('#Fueltype').val();
+	  var message =$('#message').val();
+	  var favorite = [];
+      $.each($("input[name='check1']:checked"), function(){            
+          favorite.push($(this).val());
+      });
+    //  JSON.stringify(favorite);
+     // cosole.log( Json.stringify(favorite));
+    //  console.log("My favourite sports are: " + favorite.join(", "));
+      
+      $.ajax(
+		        {
+		            type: "post",
+		            url: "http://localhost:8081/VehicleServicesAndFuelManagementSystem/AddSpecialJobOrderServlet",
+		            
+		            data: {
+		            	fname: fname,
+		            	lname:lname,
+		            	nic:nic,
+		            	address:address,
+		            	email:email,
+		            	phone:phone,
+		            	vehicleNumber:vehicleNumber,
+		            	EngineNumber:EngineNumber,
+		            	VehicleClass:VehicleClass,
+		            	brand:brand,
+		            	Model:Model,
+		            	Yearofmanufacture:Yearofmanufacture,
+		            	Dateofregistration:Dateofregistration,
+		            	Fueltype:Fueltype,
+		            
+		            	favorite:JSON.stringify(favorite),
+		            },
+		            success: function (response) {
+						console.log(response);
+		            	 $('#script').html(response);
+		            },
+		            error: function () {
+
+		            }
+		        }
+		    );
+      
+	  
+  });
+  
   $('#BreakDownService').click(function () {
 	
 	  var fname=$('#name').val();
@@ -745,12 +819,6 @@
 	  var Fueltype =$('#Fueltype').val();
 	  var message =$('#message').val();
 	  
-	 
-          var favorite = [];
-          $.each($("input[name='check1']:checked"), function(){            
-              favorite.push($(this).val());
-          });
-          console.log("My favourite sports are: " + favorite.join(", "));
      
 	  $.ajax(
 		        {
@@ -846,7 +914,28 @@ var table = document.getElementById('vehicleTable');
     
      
   }
- 
+  $('#DeleteVehicle').click(function () {
+	  var deleteVehicle=$('# DeleteVehicleInput').val();
+	 console.log('GGGGGGG');
+	  $.ajax(
+		        {
+		            type: "post",
+		            url: "http://localhost:8081/VehicleServicesAndFuelManagementSystem/DeleteVehicleServlet",
+		            
+		            data: {
+		            	deleteVehicle: deleteVehicle,
+		                
+		            },
+		            success: function (response) {
+						 //$('#Tblvehicle').html(response);
+		            },
+		            error: function () {
+
+		            }
+		        }
+		    );
+	  
+  });
   
  
   </script>

@@ -16,4 +16,7 @@ public interface VehicleService {
 
 
 	public boolean addNewVehicle(Vehicle veh,int lastId)throws Exception;
+
+
+	public boolean deleteVehicle(String vehId)throws Exception;
 }

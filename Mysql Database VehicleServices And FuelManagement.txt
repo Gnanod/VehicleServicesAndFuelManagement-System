@@ -1,7 +1,6 @@
 create database VehicleServicesAndFuelManagement;
-
 create table customer(
-	customerId int NOT NULL AUTO_INCREMENT,
+	customerId int,
 	customerName varchar(100),
 	customerPhone varchar(100),
 	customerEmail varchar(100),
@@ -24,6 +23,36 @@ create table vehicle(
 	customerId int ,
 	primary Key(vehicleId),
 	CONSTRAINT FK_Vehicle FOREIGN KEY (customerId) REFERENCES customer(customerId)
+);
+
+create table jobOrder(
+	jobOrderId int NOT NULL AUTO_INCREMENT,
+	jobOrderDescription varchar(250),
+	jobOrderStatus varchar(100),
+	customerId int,
+	primary key(jobOrderId),
+	CONSTRAINT FK_JOBID FOREIGN KEY (customerId) REFERENCES customer(customerId)
+);
+
+
+create table specialService(
+	specialServiceId int NOT NULL AUTO_INCREMENT,
+	specialServiceName varchar(100),
+	primary key(specialServiceId)
+);
+
+create table sepcialJObOrder(
+	sJobOrderId int NOT NULL AUTO_INCREMENT,
+	status  varchar(100),
+	primary key(sJobOrderId)
+);
+
+create table specialServiceJobOrder(
+	specialServiceId int,
+	sJobOrderId int,
+	primary key(specialServiceId,sJobOrderId),
+	constraint fk_ssi Foreign key(specialServiceId) References specialService(specialServiceId),
+	constraint fk_sJ Foreign key(sJobOrderId) References sepcialJObOrder(sJobOrderId)
 );
 
 select DISTINCT v.EngineNumber,v.VehicleClass,v.Brand,v.Model,v.YearOfManufacture,v.DateOfRegistration,v.fuelType from vehicle v,customer c where v.customerId=c.customerId && ( c.customerFName='Gnanod' || v.VehicleNumber='Gnanod');

@@ -83,9 +83,8 @@ public class VehicleServiceImpl implements VehicleService{
 
 	@Override
 	public boolean addNewVehicle(Vehicle veh,int lastId) throws Exception {
-		String SQL = "Insert into vehicle Values(?,?,?,?,?,?,?,?,?,?)";
 		
-		System.out.println(SQL);
+		String SQL = "Insert into vehicle Values(?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement stm = conn.prepareStatement(SQL);
         stm.setObject(1, 0);
         stm.setObject(2, veh.getEngineNumber());
@@ -99,6 +98,14 @@ public class VehicleServiceImpl implements VehicleService{
         stm.setObject(10, lastId);
         int res = stm.executeUpdate();
         return res > 0;
+		
+	}
+
+	@Override
+	public boolean deleteVehicle(String vehId) throws Exception {
+		String SQL = "delete from vehicle where vehicleId='"+vehId+"'";
+		Statement stm = conn.createStatement();
+        return stm.executeUpdate(SQL) > 0;
 		
 	}
 	
