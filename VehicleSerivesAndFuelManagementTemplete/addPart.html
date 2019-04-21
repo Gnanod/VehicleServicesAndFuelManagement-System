@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>VehicleServicesAndFuelManagement</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- Material Kit CSS -->
+    <link href="assets/css/material-kit.min1036.css?v=2.0.5" rel="stylesheet" />
+
+    <style>
+         
+    </style>
+
+</head>
+
+
+
+
+<body>
+<nav class="navbar navbar-color-on-scroll bg-white navbar-transparent fixed-top  navbar-expand-lg  " color-on-scroll="100" id="sectionsNav">
+
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" href=" ">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item pad">
+                    <a href="index.html" class="nav-link" >
+                        <i class="material-icons">home</i> Home
+                    </a>
+                </li>
+
+                <li class="nav-item pad">
+                    <a href="Movies.html" class="nav-link" >
+                        <i class="material-icons">business_center</i> Shedule
+                    </a>
+                </li>
+                <li class="nav-item pad">
+                    <a href="#" class="nav-link" >
+                        <i class="material-icons">business_center</i> Parts
+                    </a>
+                </li>
+                <li class="nav-item pad">
+                    <a href="#" class="nav-link" >
+                        <i class="material-icons">business_center</i> Fuel
+                    </a>
+                </li>
+
+
+                <li class="button-container nav-item iframe-extern pad" style="right: 100px;">
+                    <a href="login.html" target="_blank" class="btn  btn-rose   btn-round btn-block" >
+                        <i class="material-icons">fingerprint</i>  LOGIN
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/images/HomeBanner.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+                <div class="brand text-center">
+
+                    
+                    <h1> Vehicle Parts </h1>
+                    <h3 class="title text-center"></h3>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="main main-raised">
+    <div class="container">
+
+        <div class="col-md-10 ml-auto mr-auto">
+            <!--<h2 class="title"></h2>-->
+            <br>
+
+            <!-- 111111111111111111111111111111111111111111111111111111 -->
+
+
+             
+            <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist" aria-expanded="true">
+                        New
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#link2" role="tablist" aria-expanded="false">
+                        Update
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#link3" role="tablist" aria-expanded="false">
+                        Search
+                    </a>
+                </li>
+            </ul>
+            <!-- One -->
+            <div class="tab-content tab-space">
+                <div class="tab-pane active" id="link1" aria-expanded="true">
+                        <div class="tim-typo">
+                                <h2 class="title">
+                                  <span class="tim-note"></span>Add Vehicle Parts</h2>
+                              </div>
+                            
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-static">Name</label>
+                                <input type="text" class="form-control" placeholder="Enter Part Name">
+                              </div>
+                
+                              <div class="form-group bmd-form-group">
+                                <label class="bmd-label-static">Quntity</label>
+                                <input type="text" class="form-control" placeholder="Enter Quntity">
+                              </div>
+                
+                              <div class="form-group bmd-form-group">
+                                <label class="bmd-label-static">Price</label>
+                                <input type="text" class="form-control" placeholder="Enter Price">
+                              </div>
+
+                              <div class="form-group">
+                                <label for="exampleFormControlSelect1">Brand</label>
+                                <select class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                              </div>
+                              <!-- model button -->
+                              <button class="btn btn-rose">Add new Brand</button>
+                            <!--  -->
+                              <div class="form-group">
+                                <label for="exampleFormControlSelect1">Model</label>
+                                <select class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                              </div>
+                              <button class="btn btn-rose">Add new Model</button>
+                              <br>
+                              <br>
+                              <br>
+
+                              <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                <div class="fileinput-new thumbnail img-raised">
+                                  <img src="assets/img/image_placeholder.jpg" alt="...">
+                                </div>
+                                <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
+                                <div>
+                                  <span class="btn btn-raised btn-round btn-default btn-file">
+                                    <span class="fileinput-new">Select image</span>
+                                    <span class="fileinput-exists">Change</span>
+                                    <input type="file" name="..." />
+                                  </span>
+                                  <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                                </div>
+                              </div>
+                              <br>
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+                <!-- two -->
+                <div class="tab-pane" id="link2" aria-expanded="false">
+
+                        <div class="table-responsive">
+                                <table class="table table-shopping">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"></th>
+                                            <th>Product</th>
+                                            <th class="th-description">Brand</th>
+                                            <th class="th-description">Model</th>
+                                            <th class="text-right">Price</th>
+                                            <th class="text-right">Qty</th>
+                                            <th class="text-right">Amount</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="img-container">
+                                                    <img src="http://westernautowrecking.com/wp-content/uploads/2015/12/Used-Auto-Parts.jpg" alt="...">
+                                                </div>
+                                            </td>
+                                            <td class="td-name">
+                                                <a href="#jacket">Car Parts</a>
+                                                <br><small>&amp;</small>
+                                            </td>
+                                            <td>
+                                                ZUZUKI
+                                            </td>
+                                            <td>
+                                                abcd
+                                            </td>
+                                            <td class="td-number">
+                                                <small>&#x20AC;</small>1000
+                                            </td>
+                                            <td class="td-number">
+                                                1
+                                                <div class="btn-group">
+                                                    <button class="btn btn-round btn-info btn-sm"> <i class="material-icons">remove</i> </button>
+                                                    <button class="btn btn-round btn-info btn-sm"> <i class="material-icons">add</i> </button>
+                                                </div>
+                                            </td>
+                                            <td class="td-number">
+                                                <small>&#x20AC;</small>1000
+                                            </td>
+                                            <td class="td-actions">
+                                                <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-simple">
+                                                    <i class="material-icons">close</i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                              </div>
+
+                   </div>
+
+                <!-- three -->
+                <div class="tab-pane" id="link3" aria-expanded="false">
+
+                        <div class="col-lg-6 col-md-8 col-sm-3">
+                                <div class="dropdown">
+                                  <button class="dropdown-toggle btn btn-primary btn-round btn-block" type="button" id="multiDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Multilevel Dropdown
+                                  </button>
+                                  <div class="dropdown-menu" aria-labelledby="multiDropdownMenu">
+                                    <a class="dropdown-item" href="#pablo">Action</a>
+                                    <a class="dropdown-item" href="#pablo">Another action</a>
+                                    <a class="dropdown-item dropdown-toggle" href="#pablo">Submenu</a>
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item" href="#pablo">Submenu action</a>
+                                      <a class="dropdown-item" href="#pablo">Submenu action</a>
+                                      <a class="dropdown-item dropdown-toggle" href="#pablo">Subsubmenu</a>
+                                      <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#pablo">Subsubmenu action 1</a>
+                                        <a class="dropdown-item" href="#pablo">Subsubmenu action 2</a>
+                                      </div>
+                                      <a class="dropdown-item dropdown-toggle" href="#pablo">Second subsubmenu</a>
+                                      <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#pablo">Subsubmenu action 1</a>
+                                        <a class="dropdown-item" href="#pablo">Subsubmenu action 2</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            <strong><br></strong>
+
+                            <div class="card card-profile ml-auto mr-auto" style="max-width: 360px">
+                                    <div class="card-header card-header-image">
+                                          <a href="#pablo">
+                                              <img class="img" src="data:image/jpeg;base64,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">
+                                          </a>
+                                      </div>
+                                  
+                                      <div class="card-body ">
+                                          <h4 class="card-title">Car Engine</h4>
+                                          <h6 class="card-category text-gray">Details</h6>
+                                      </div>
+                                      <div class="card-footer justify-content-center">
+                                            <a href="#" class="btn btn-primary btn-lg disabled" role="button" aria-disabled="true">Primary link</a>
+                                          
+                                      </div>
+                                  </div>
+
+                 </div>
+            </div>
+
+
+ 
+            <!-- 111111111111111111111111111111111111111111111111111111 -->
+
+        </div>
+        <!--</div>-->
+        <br>
+        <br>
+        <br>
+
+    </div>
+</div>
+
+<footer class="footer footer-default"  >
+    <div class="container" >
+        <nav class="float-left" id="footerStyle">
+            <ul>
+                <li >
+                    <a href="#" class="footStyle">
+                        ABOUT US
+                    </a>
+                </li>
+                <li >
+                    <a href="#" class="footStyle" >
+                        CONTACT US
+                    </a>
+                </li>
+                <li >
+                    <a href="#" class="footStyle">
+                        FAQ
+                    </a>
+                </li>
+                <li >
+                    <a href="#" class="footStyle" id="register">
+                        Register
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright float-right" id="copyright">
+            &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script>,
+            made with <i class="material-icons">favorite</i> by
+            <a href="https://www.creative-tim.com/" target="_blank">PHGH</a> for a better web.
+
+
+
+
+        </div>
+        <div id="social">
+            <button class="btn btn-just-icon btn-twitter" >
+                <i class="fa fa-twitter"></i>
+            </button>
+            <button class="btn btn-just-icon  btn-facebook">
+                <i class="fa fa-facebook"> </i>
+            </button>
+
+            <button class="btn btn-just-icon  btn-google">
+                <i class="fa fa-google"> </i>
+            </button>
+
+            <button class="btn btn-just-icon  btn-linkedin">
+                <i class="fa fa-linkedin"></i>
+            </button>
+        </div>
+    </div>
+</footer>
+</footer>
+
+
+<!--   Core JS Files   -->
+<script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
+<script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+<script src="assets/js/plugins/moment.min.js"></script>
+<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+<script src="assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGat1sgDZ-3y6fFe6HD7QUziVC6jlJNog"></script>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="../../buttons.github.io/buttons.js"></script>
+<!--	Plugin for Sharrre btn -->
+<script src="assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
+<!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+<script src="assets/js/plugins/bootstrap-tagsinput.js"></script>
+<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+<script src="assets/js/plugins/bootstrap-selectpicker.js" type="text/javascript"></script>
+<!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+<script src="assets/js/plugins/jasny-bootstrap.min.js" type="text/javascript"></script>
+<!--	Plugin for Small Gallery in Product Page -->
+<script src="assets/js/plugins/jquery.flexisel.js" type="text/javascript"></script>
+<!-- Plugins for presentation and navigation  -->
+<script src="assets/demo/modernizr.js" type="text/javascript"></script>
+<script src="assets/demo/vertical-nav.js" type="text/javascript"></script>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="../../buttons.github.io/buttons.js"></script>
+<!-- Js With initialisations For Demo Purpose, Don't Include it in Your Project -->
+<script src="assets/demo/demo.js" type="text/javascript"></script>
+<!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+<script src="assets/js/material-kit.min1036.js?v=2.1.1" type="text/javascript"></script>
+
+</body>
+
+</html>
