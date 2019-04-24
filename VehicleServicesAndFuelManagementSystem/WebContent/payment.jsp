@@ -1,3 +1,8 @@
+<%@page import="com.sliit.vsafms.service.impl.FuelServiceImpl"%>
+<%@page import="com.sliit.vsafms.service.FuelService"%>
+<%@page import="com.sliit.vsafms.model.Fuel"%>
+<%@page import="java.util.ArrayList"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!doctype html>
@@ -126,13 +131,20 @@
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-6 col-sm-12" style="margin-left: -100px;margin-top:15px">
-                            <select class="selectpicker" data-style="select-with-transition" title="Single Select" data-size="7">
-                                <option disabled>Choose city</option>
-                                <option value="2">FuelType 1</option>
-                                <option value="3">Fuel Type 2</option>
-                                <option value="3">Fuel Type 2</option>
-                                <option value="3">Fuel Type 2</option>
-                                <option value="3">Fuel Type 2</option>
+                            <select class="selectpicker" data-style="select-with-transition" title="Please Select One " data-size="4" id="fuel">
+                                <option disabled>Choose Fuel</option>
+                                
+                                <%
+ 								FuelService fuelService = new FuelServiceImpl();                              
+                                ArrayList<Fuel> fuelList = fuelService.getFuelName();
+                         			
+                                
+                                	for(Fuel c:fuelList){
+                                %>
+                                <option value="<%=c.getFuleName() %>"><%=c.getFuleName() %></option>
+                                <%
+                                	}
+                                %>
                             </select>
                         </div>
 

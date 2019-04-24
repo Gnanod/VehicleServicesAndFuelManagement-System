@@ -1,6 +1,6 @@
 create database VehicleServicesAndFuelManagement;
 create table customer(
-	customerId int,
+	customerId int NOT NULL AUTO_INCREMENT,
 	customerName varchar(100),
 	customerPhone varchar(100),
 	customerEmail varchar(100),
@@ -34,6 +34,52 @@ create table jobOrder(
 	CONSTRAINT FK_JOBID FOREIGN KEY (customerId) REFERENCES customer(customerId)
 );
 
+create table supplier(
+	supplierId int NOT NULL AUTO_INCREMENT,
+	supplierName varchar(100),
+	supplierPhone varchar(100),
+	supplierEmail varchar(100),
+	supplierAddress varchar(100),
+	primary Key(supplierId)
+);
+Insert into  supplier values(0,'Gnanod','0772219800','asd@gmail.com','Galle');
+Insert into supplier  values (0,'Chathura','0772219800','ds@gmail.com','Galle');
+Insert into  supplier values(0,'Akalanka','0723459800','io@gmail.com','Galle');
+Insert into  supplier values(0,'Madu','0771239800','po@gmail.com','Galle');
+
+create table fuel(
+	fuelId int not null AUTO_INCREMENT,
+	fuleName varchar(100),
+	supplierId int,
+	qty varchar(100),
+	price varchar(100),
+	brand varchar(100),
+	primary Key(fuelId),
+	CONSTRAINT FK_fuel FOREIGN KEY (supplierId) REFERENCES supplier(supplierId)
+
+);
+
+
+
+Insert into  fuel values(0,'Type1',1,'1000l','127','brand1');
+Insert into  fuel values(0,'Type2',2,'1000l','137','brand2');
+Insert into  fuel values(0,'Type3',1,'1000l','167','brand3');
+Insert into  fuel values(0,'Type4',3,'1000l','107','brand4');
+Insert into  fuel values(0,'Type5',1,'1000l','147','brand5');
+
+create table payment(
+	paymentId int,
+	total double,
+	primary key(paymentId)
+);
+
+create table fuelPayment(
+	fuelPaymentId int not null AUTO_INCREMENT,
+	paymentId int,
+	volume real,
+	CONSTRAINT FK_Payment FOREIGN KEY (paymentId) REFERENCES payment(paymentId),
+	primary key(fuelPaymentId)
+);
 
 create table specialService(
 	specialServiceId int NOT NULL AUTO_INCREMENT,
