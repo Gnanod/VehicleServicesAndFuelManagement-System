@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9845a2c7-6caa-4e69-93fa-537c9c5debf3" name="Default Changelist" comment="" />
+    <list default="true" id="9845a2c7-6caa-4e69-93fa-537c9c5debf3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../VehicleSerivesAndFuelManagementTemplete/WEB-INF/views/Login1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VehicleSerivesAndFuelManagementTemplete/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VehicleSerivesAndFuelManagementTemplete/index.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,14 +45,23 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-975250486">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demos.creative-tim.com/material-kit-pro/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="772">
-              <caret line="1766" column="30" lean-forward="true" selection-start-line="1766" selection-start-column="30" selection-end-line="1766" selection-end-column="30" />
+            <state relative-caret-position="-163">
+              <caret line="1560" column="37" selection-start-line="1560" selection-start-column="11" selection-end-line="1560" selection-end-column="37" />
               <folding>
                 <element signature="e#82096#82101#0" expanded="true" />
               </folding>
@@ -61,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/demos.creative-tim.com/material-kit-pro/sections.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="13940">
-              <caret line="820" column="25" lean-forward="true" selection-start-line="820" selection-start-column="25" selection-end-line="820" selection-end-column="25" />
+              <caret line="820" column="25" selection-start-line="820" selection-start-column="25" selection-end-line="820" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -121,6 +133,9 @@
       <find>ENTERPRISE</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -136,12 +151,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="22" />
     <option name="y" value="28" />
     <option name="width" value="1346" />
     <option name="height" value="688" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -220,16 +236,18 @@
       <workItem from="1546575402157" duration="4046000" />
       <workItem from="1546669823439" duration="597000" />
       <workItem from="1554610503686" duration="6189000" />
+      <workItem from="1555329593435" duration="652000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30312000" />
+    <option name="totallyTimeSpent" value="30964000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20877458" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2118003" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -270,6 +288,23 @@
         <state relative-caret-position="-1747" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/demos.creative-tim.com/material-kit-pro/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-163">
+          <caret line="1560" column="37" selection-start-line="1560" selection-start-column="11" selection-end-line="1560" selection-end-column="37" />
+          <folding>
+            <element signature="e#82096#82101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos.creative-tim.com/material-kit-pro/sections.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13940">
+          <caret line="820" column="25" selection-start-line="820" selection-start-column="25" selection-end-line="820" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demos.creative-tim.com/material-kit-pro/examples/blog-posts.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8347">
@@ -301,23 +336,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="30" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demos.creative-tim.com/material-kit-pro/sections.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13940">
-          <caret line="820" column="25" lean-forward="true" selection-start-line="820" selection-start-column="25" selection-end-line="820" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demos.creative-tim.com/material-kit-pro/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
-          <caret line="1766" column="30" lean-forward="true" selection-start-line="1766" selection-start-column="30" selection-end-line="1766" selection-end-column="30" />
-          <folding>
-            <element signature="e#82096#82101#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
