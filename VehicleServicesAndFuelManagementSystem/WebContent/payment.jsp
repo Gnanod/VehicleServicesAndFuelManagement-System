@@ -131,8 +131,8 @@
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-6 col-sm-12" style="margin-left: -100px;margin-top:15px">
-                            <select class="selectpicker" data-style="select-with-transition" title="Please Select One " data-size="4" id="fuel">
-                                <option disabled>Choose Fuel</option>
+                            <select class="selectpicker" data-style="select-with-transition" data-size="4" id="fuel">
+                                
                                 
                                 <%
  								FuelService fuelService = new FuelServiceImpl();                              
@@ -141,7 +141,7 @@
                                 
                                 	for(Fuel c:fuelList){
                                 %>
-                                <option value="<%=c.getFuleName() %>"><%=c.getFuleName() %></option>
+                                <option value="<%=c.getFuleName() %>" id="firstValue"><%=c.getFuleName() %></option>
                                 <%
                                 	}
                                 %>
@@ -155,8 +155,8 @@
                                 <h4>Price</h4>
                             </div>
                         </div>
-                        <div class="col-lg-5 col-md-6 col-sm-12" style="margin-left: -100px;margin-top:15px">
-                            <input type="text" class="form-control" id="price">
+                        <div class="col-lg-5 col-md-6 col-sm-12" style="margin-left: -100px;margin-top:15px" id="price">
+                            
                         </div>
 
                     </div>
@@ -171,7 +171,7 @@
                             <input type="text" class="form-control" id="volume">
                         </div>
                         <div class="col-lg-2 " >
-                            <button class="btn btn-primary" style="margin-top: 10px">Total</button>
+                            <button class="btn btn-primary" style="margin-top: 10px" id="btnTotal">Total</button>
                         </div>
                     </div>
 
@@ -182,10 +182,10 @@
                             </div>
                         </div>
                         <div class="col-lg-5 " style="margin-left: -100px;margin-top:15px">
-                            <input type="text" class="form-control" id="total">
+                            <input type="text" class="form-control" id="totalPrice">
                         </div>
                         <div class="col-lg-2 " >
-                            <button class="btn btn-primary" style="margin-top: 10px">PrintBill</button>
+                            <button class="btn btn-primary" style="margin-top: 10px" id="prinBill">PrintBill</button>
                         </div>
                     </div>
                 </div>
@@ -313,6 +313,104 @@
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
 <script src="assets/js/material-kit.min1036.js?v=2.1.1" type="text/javascript"></script>
 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>
+
+<script>
+
+var fuelName=null;
+
+$('#btnTotal').click(function(){
+	
+	var volume = $('#volume').val();
+	var price = $('#input').val();
+	var total = volume*price;
+	document.getElementById("totalPrice").value = total;
+	
+});
+
+$('#prinBill').click(function(){
+	var volume = $('#volume').val();
+	var price = $('#input').val();
+	var total = $('#totalPrice').val();
+	
+	 $.ajax(
+		        {
+		            type: "post",
+		            url: "http://localhost:8081/VehicleServicesAndFuelManagementSystem/AddPaymentServlet",
+		            data: {
+		            	
+		            	total:total,
+		            	price:price,
+		            	volume:volume,
+		            	fuelName:fuelName,
+		                
+		            },
+		            success: function (response) {
+					//	$('#price').html(response);
+		            },
+		            error: function () {
+
+		            }
+		        }
+		    );
+	
+});
+$(document).ready(function(){
+	
+	
+        var selectedType = $('#fuel').children("option:selected").val();
+       
+        fuelName=selectedType;
+        $.ajax(
+		        {
+		            type: "post",
+		            url: "http://localhost:8081/VehicleServicesAndFuelManagementSystem/PaymentServlet",
+		            data: {
+		            	
+		            	selectedType: selectedType,
+		                
+		            },
+		            success: function (response) {
+						$('#price').html(response);
+		            },
+		            error: function () {
+
+		            }
+		        }
+		    );
+    
+});
+
+$(document).ready(function(){
+    $("#fuel").change(function(){
+        var selectedType = $(this).children("option:selected").val();
+        fuelName=selectedTpe;
+        $.ajax(
+		        {
+		            type: "post",
+		            url: "http://localhost:8081/VehicleServicesAndFuelManagementSystem/PaymentServlet",
+		            
+		            data: {
+		            	
+		            	selectedType: selectedType,
+		                
+		            },
+		            success: function (response) {
+						$('#price').html(response);
+		            },
+		            error: function () {
+
+		            }
+		        }
+		    );
+    });
+});
+
+
+</script>
+
 </body>
+
+
 
 </html>

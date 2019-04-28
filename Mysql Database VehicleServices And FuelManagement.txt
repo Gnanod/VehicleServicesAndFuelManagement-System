@@ -61,14 +61,14 @@ create table fuel(
 
 
 
-Insert into  fuel values(0,'Type1',1,'1000l','127','brand1');
-Insert into  fuel values(0,'Type2',2,'1000l','137','brand2');
-Insert into  fuel values(0,'Type3',1,'1000l','167','brand3');
-Insert into  fuel values(0,'Type4',3,'1000l','107','brand4');
-Insert into  fuel values(0,'Type5',1,'1000l','147','brand5');
+Insert into  fuel values(0,'Type1',1,'1000','127','brand1');
+Insert into  fuel values(0,'Type2',2,'1005','137','brand2');
+Insert into  fuel values(0,'Type3',1,'2000','167','brand3');
+Insert into  fuel values(0,'Type4',3,'4000','107','brand4');
+Insert into  fuel values(0,'Type5',1,'5000','147','brand5');
 
 create table payment(
-	paymentId int,
+	paymentId int not null AUTO_INCREMENT,
 	total double,
 	primary key(paymentId)
 );
