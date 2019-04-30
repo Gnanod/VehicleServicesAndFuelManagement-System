@@ -15,7 +15,7 @@ import com.sliit.vsafms.service.FuelService;
 import com.sliit.vsafms.service.impl.FuelServiceImpl;
 
 /**
- * Servlet implementation class PaymentServlet
+ * Servlet implementation class PaymentServlet @Gnanod
  */
 @WebServlet(urlPatterns="/PaymentServlet")
 public class PaymentServlet extends HttpServlet {

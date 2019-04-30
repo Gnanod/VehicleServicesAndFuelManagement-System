@@ -33,7 +33,7 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item pad">
-                    <a href="index.html" class="nav-link" >
+                    <a href="index.jsp" class="nav-link" >
                         <i class="material-icons">home</i> Home
                     </a>
                 </li>
@@ -54,12 +54,37 @@
                     </a>
                 </li>
 
+<% 
+                if (session.getAttribute("Login")=="Logged") {
+	
+
+
+
+%>
+				<li class="dropdown nav-item">
+                    <a href="#pablo" class="profile-photo dropdown-toggle nav-link" data-toggle="dropdown">
+                        <div class="profile-photo-small">
+                            <img src="./assets/img/faces/avatar.jpg" alt="Circle Image" class="rounded-circle img-fluid" >
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-left">
+
+                        <!--  <a href="#pablo" class="dropdown-item">ViewProfile</a>-->
+                        <!--  <a href="#pablo" class="dropdown-item">EditProfile</a>-->
+                        <a href="LogOut" class="dropdown-item">LogOut</a>
+                    </div>
+                </li>
+ <%
+}else{
+ %>
 
                 <li class="button-container nav-item iframe-extern pad" style="right: 100px;">
                     <a href="login.jsp" target="_blank" class="btn  btn-rose   btn-round btn-block" >
                         <i class="material-icons">fingerprint</i>  LOGIN
                     </a>
                 </li>
+                
+ <%} %>     
 
 
             </ul>

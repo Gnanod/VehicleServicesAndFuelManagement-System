@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +18,7 @@ import com.sliit.vsafms.service.impl.FuelServiceImpl;
 import com.sliit.vsafms.util.DBConnection;
 
 /**
- * Servlet implementation class AddPaymentServlet
+ * Servlet implementation class AddPaymentServlet @Gnanod
  */
 @WebServlet(urlPatterns="/AddPaymentServlet")
 public class AddPaymentServlet extends HttpServlet {
@@ -81,6 +82,7 @@ public class AddPaymentServlet extends HttpServlet {
 					out.println("swal ( 'Payment Is ' ,  'successfull !' ,  'success' );");
 					out.println("});");
 					out.println("</script>");
+					
 					
 					
 				}else {

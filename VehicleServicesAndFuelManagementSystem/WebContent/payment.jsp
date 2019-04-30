@@ -23,6 +23,16 @@
 
 </head>
 
+<%
+
+String  logSession = (String)session.getAttribute("Login");
+
+if (session.getAttribute("Login")!="Logged" && session.getAttribute("position")!="Reception") {
+	response.sendRedirect("login.jsp");
+}
+
+
+%>
 
 
 <body>
@@ -54,8 +64,8 @@
                         <i class="material-icons">business_center</i> Shedule
                     </a>
                     <div class="dropdown-menu dropdown-menu-left">
-                        <a href="#pablo" class="dropdown-item">JobOrder</a>
-                        <a href="#pablo" class="dropdown-item">Payment</a>
+                        <a href="addJobShedule.jsp" class="dropdown-item">JobOrder</a>
+                        <a href="payment.jsp" class="dropdown-item">Payment</a>
                         <a href="#pablo" class="dropdown-item">Parts</a>
                     </div>
                 </li>
@@ -71,24 +81,37 @@
                 </li>
 
 
-                <li class="button-container nav-item iframe-extern pad" style="right: 100px;">
-                    <a href="login.html" target="_blank" class="btn  btn-rose   btn-round btn-block" >
-                        <i class="material-icons">fingerprint</i>  LOGIN
-                    </a>
-                </li>
+<% 
+                if (session.getAttribute("Login")=="Logged") {
+	
 
 
-                <li class="dropdown nav-item">
+
+%>
+				<li class="dropdown nav-item">
                     <a href="#pablo" class="profile-photo dropdown-toggle nav-link" data-toggle="dropdown">
                         <div class="profile-photo-small">
                             <img src="./assets/img/faces/avatar.jpg" alt="Circle Image" class="rounded-circle img-fluid" >
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-left">
-                        <a href="#pablo" class="dropdown-item">LogOut</a>
+
+                        <!--  <a href="#pablo" class="dropdown-item">ViewProfile</a>-->
+                        <!--  <a href="#pablo" class="dropdown-item">EditProfile</a>-->
+                        <a href="LogOut" class="dropdown-item">LogOut</a>
                     </div>
                 </li>
+ <%
+}else{
+ %>
 
+                <li class="button-container nav-item iframe-extern pad" style="right: 100px;">
+                    <a href="login.jsp" target="_blank" class="btn  btn-rose   btn-round btn-block" >
+                        <i class="material-icons">fingerprint</i>  LOGIN
+                    </a>
+                </li>
+                
+ <%} %>  
             </ul>
         </div>
     </div>
@@ -208,6 +231,9 @@
                         </div>
                     </div>
 
+                </div>
+                
+                <div id="Message">
                 </div>
             </div>
         </div>
@@ -346,7 +372,9 @@ $('#prinBill').click(function(){
 		                
 		            },
 		            success: function (response) {
-					//	$('#price').html(response);
+						$('#Message').html(response);
+						document.getElementById("totalPrice").value =null;
+						document.getElementById("volume").value =null;
 		            },
 		            error: function () {
 

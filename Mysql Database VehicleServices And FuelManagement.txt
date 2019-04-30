@@ -1,4 +1,21 @@
 create database VehicleServicesAndFuelManagement;
+
+create table user(
+
+	userId int NOT NULL AUTO_INCREMENT,
+	userNic varchar(100),
+	userPassword varchar(100),
+	position varchar(100),
+	primary Key(userId)
+
+);
+
+Insert into user values(0,'951960055V','123','receptionist');
+
+ select position from user where userNic='951960055V' && userPassword='123';
+
+
+
 create table customer(
 	customerId int NOT NULL AUTO_INCREMENT,
 	customerName varchar(100),
