@@ -41,7 +41,7 @@
             margin-top: -10px;
         }
         #background{
-            background-image: url('assets/img/backgroundImg.jpg');
+            background-image: url('assets/images/VehicleParts.jpg');
             background-size: cover;
             background-position: top center;
             width: 100%;
@@ -267,28 +267,18 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
+                
+                
+                
                 <li class="nav-item pad">
-                    <a href="index.html" class="nav-link" >
+                    <a href="index.jsp" class="nav-link" >
                         <i class="material-icons">home</i> Home
                     </a>
                 </li>
 
-                <li class="nav-item pad">
-                    <a href="Movies.html" class="nav-link" >
-                        <i class="material-icons">business_center</i> Service Shedule
-                    </a>
-                </li>
-                <li class="nav-item pad">
-                    <a href="#" class="nav-link" >
-                        <i class="material-icons">business_center</i> Parts
-                    </a>
-                </li>
-                <li class="nav-item pad">
-                    <a href="#" class="nav-link" >
-                        <i class="material-icons">business_center</i> Fuel
-                    </a>
-                </li>
-
+                
+               
+                
 
                 <li class="button-container nav-item iframe-extern pad" style="right: 100px;">
                     <a href="login.html" target="_blank" class="btn  btn-rose   btn-round btn-block" >
@@ -312,7 +302,7 @@
         <div class="row"  style="margin-top: 200px;">
             <!--<img src="images/sliitlogo.png" style=" ">-->
             <div class="col-lg-5 col-md-6 col-sm-8 ml-auto mr-auto" >
-                <form class="form" method="" action="#">
+                <form class="form" method="post" action="LoginServlet">
                     <div class="card card-login card-hidden" id="loginDetails">
 
                         <div class="card-body " >
@@ -321,10 +311,10 @@
                   <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">
-                        <i class="material-icons">email</i>
+                        <i class="material-icons">NIC</i>
                       </span>
                     </div>
-                    <input type="email" class="form-control" placeholder="IndexNumber...">
+                    <input type="text"  name="nic" class="form-control" placeholder="Nic...">
                   </div>
                 </span>
                             <span class="bmd-form-group">
@@ -334,7 +324,7 @@
                         <i class="material-icons">lock_outline</i>
                       </span>
                     </div>
-                    <input type="password" class="form-control" placeholder="Password...">
+                    <input type="password" name="password" class="form-control" placeholder="Password...">
                   </div>
               </span>
                             <a href="examples/login-page.html" class="btn btn-link btn-primary " target="_blank" id="forgetPassword">Forget Password ?</a>
@@ -448,6 +438,38 @@
 <script src="assets/demo/demo.js" type="text/javascript"></script>
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
 <script src="assets/js/material-kit.min1036.js?v=2.1.1" type="text/javascript"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>
+
+<%
+
+if (session.getAttribute("UserNIC")=="Nic is Invalid") {
+	
+%>
+<script>
+			$(document).ready(function(){
+			swal ( 'You are not' ,  'Registered !' ,  'error' );
+			});
+</script>
+			
+	<%
+}
+	%>
+	
+<%
+if (session.getAttribute("UserPassword")=="Password is Invalid") {
+	
+%>
+<script>
+			$(document).ready(function(){
+			swal ( 'Password' ,  'is Invalid !' ,  'error' );
+			});
+</script>
+			
+	<%
+}
+	%>	
+	
 </body>
 
 </html>

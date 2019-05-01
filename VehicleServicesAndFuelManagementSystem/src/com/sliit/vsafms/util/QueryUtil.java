@@ -18,10 +18,10 @@ public class QueryUtil extends CommonUtil{
 //	public static String stringQueryByID(String id) throws SAXException, IOException, ParserConfigurationException {
 //		
 
-//		NodeList nodeList;
+	//NodeList nodeList;
 //		Element element = null;
 //		
-//		nodeList = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File(System.getProperty("catalina.base")+"\\wtpwebapps\\SampleAddCustomer\\WEB-INF\\StudentQuery.xml")).getElementsByTagName(CommonConstants.TAG_NAME);
+	//	nodeList = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File(System.getProperty("catalina.base")+"\\wtpwebapps\\SampleAddCustomer\\WEB-INF\\StudentQuery.xml")).getElementsByTagName(CommonConstants.TAG_NAME);
 //		
 //		
 //		for (int i = 0; i <nodeList.getLength(); i++) {
