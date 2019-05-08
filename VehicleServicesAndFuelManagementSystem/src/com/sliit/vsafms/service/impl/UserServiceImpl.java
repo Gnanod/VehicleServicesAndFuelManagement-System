@@ -2,6 +2,7 @@ package com.sliit.vsafms.service.impl;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.sliit.vsafms.model.User;
@@ -18,7 +19,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public String LoginFunction(User user) throws Exception {
+	public String LoginFunction(User user) throws SQLException  {
 		String sql2 =" select position from user where userNic='"+user.getNic()+"' && userPassword='"+user.getPassword()+"';";
 		Statement statement= conn.createStatement();
 		ResultSet rst2 = statement.executeQuery(sql2);
