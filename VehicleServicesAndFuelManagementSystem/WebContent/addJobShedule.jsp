@@ -8,6 +8,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+
+ <% //response.addHeader("Refresh","10;http://localhost:8081/VehicleServicesAndFuelManagementSystem/addJobShedule.jsp"); %>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -817,7 +819,7 @@ if (session.getAttribute("Login")=="Logged") {
 		            	Dateofregistration:Dateofregistration,
 		            	Fueltype:Fueltype,
 		            
-		            	favorite:JSON.stringify(favorite),
+		            	favorite:favorite,
 		            },
 		            success: function (response) {
 						console.log(response);
