@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!doctype html>
 <html lang="en">
 <meta charset="ISO-8859-1">
@@ -143,7 +145,7 @@
                                             <h4 class="card-title">Vehicle Model</h4>
                                           </div>
                                         </div>
-                                        <div class="card-body" >
+                                        <div class="card-body">
                                             
                                         </div>
                                     </div>
@@ -156,7 +158,7 @@
                                                     <h5 class="card-title">Brand of the Vehicle</h5>
                                                   </div>
                                                 </div>
-                                                <div class="card-body" >
+                                                <div class="card-body" width = "50%">
                                                     
                                                 </div>
                                             </div>
