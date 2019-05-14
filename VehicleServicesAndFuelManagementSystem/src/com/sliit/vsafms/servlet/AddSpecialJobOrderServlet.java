@@ -64,28 +64,35 @@ public class AddSpecialJobOrderServlet extends HttpServlet {
 		String phone = request.getParameter("phone");
 		
 		String arr=  request.getParameter("favorite");
-		String[] myJsonData = request.getParameterValues("favorite");
+		//String checkBoxValues = request.getParameter("check1");
+		String checkBox[] = request.getParameterValues("check1");
+		System.out.println("IIIIII"+arr);
+		
+//		for (String string : checkBoxValues) {
+//			
+//			System.out.println(string);
+//		}
 		
 		
-		try {
-			
-			JSONObject ob = new JSONObject(request.getParameter("favorite"));
-			Iterator it =  ob.keys(); //gets all the keys
-			while(it.hasNext())
-			{
-			    String key = (String) it.next(); // get key
-			   
-					Object o = ob.get(key);
-					 System.out.println("oooo"+o);
-				 // get value
-			    
-			   
-			  //  session.putValue(key, o); // store in session
-			}
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			
+//			JSONObject ob = new JSONObject(request.getParameter("favorite"));
+//			Iterator it =  ob.keys(); //gets all the keys
+//			while(it.hasNext())
+//			{
+//			    String key = (String) it.next(); // get key
+//			   
+//					Object o = ob.get(key);
+//					 System.out.println("oooo"+o);
+//				 // get value
+//			    
+//			   
+//			  //  session.putValue(key, o); // store in session
+//			}
+//		} catch (JSONException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 		
 

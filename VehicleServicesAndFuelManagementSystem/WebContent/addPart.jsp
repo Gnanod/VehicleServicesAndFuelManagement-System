@@ -1,6 +1,6 @@
 <!doctype html>
-<%@page import="com.sliit.vsafms.model.Part"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="com.sliit.vsafms.model.Part"%>
 <%@page import="com.sliit.vsafms.service.impl.PartManagementImpl"%>
 <%@page import="com.sliit.vsafms.service.PartManagement"%>
 <html lang="en">
