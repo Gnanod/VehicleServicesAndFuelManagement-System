@@ -1,4 +1,8 @@
 <!doctype html>
+<%@page import="com.sliit.vsafms.model.Part"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.sliit.vsafms.service.impl.PartManagementImpl"%>
+<%@page import="com.sliit.vsafms.service.PartManagement"%>
 <html lang="en">
 
 <head>
@@ -14,9 +18,7 @@
     <link href="assets/css/material-kit.min1036.css?v=2.0.5" rel="stylesheet" />
 
     <style>
-         .align{
-              margin: 0px -300px 0px 250px;
-         }
+         
     </style>
 
 </head>
@@ -110,12 +112,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#link2" role="tablist" aria-expanded="false">
-                        Update
+                        Search
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#link3" role="tablist" aria-expanded="false">
-                        Search
+                       Update 
                     </a>
                 </li>
             </ul>
@@ -126,111 +128,126 @@
                                 <h2 class="title">
                                   <span class="tim-note"></span>Add Vehicle Parts</h2>
                               </div>
-                            
+                            <form action="AddPartServlet" method="post">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-static">Name</label>
-                                <input type="text" class="form-control" placeholder="Enter Part Name">
+                                <input type="text" class="form-control" placeholder="Enter Part Name" name="pname">
                               </div>
                 
                               <div class="form-group bmd-form-group">
-                                <label class="bmd-label-static">Quntity</label>
-                                <input type="text" class="form-control" placeholder="Enter Quntity">
+                                <label class="bmd-label-static">Quantity</label>
+                                <input type="text" class="form-control" placeholder="Enter Quntity" name="qty">
                               </div>
                 
                               <div class="form-group bmd-form-group">
                                 <label class="bmd-label-static">Price</label>
-                                <input type="text" class="form-control" placeholder="Enter Price">
+                                <input type="text" class="form-control" placeholder="Enter Price" name="price">
                               </div>
 
                               <div class="form-group">
                                 <label for="exampleFormControlSelect1">Brand</label>
-                                <select class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
+                                <select class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1" name="brand">
+                                  <option>Toyota</option>
+                                  <option>Mazda</option>
+                                  <option>Honda</option>
+                                  <option>Nissan</option>
+                                  <option>Suzuki</option>
                                 </select>
                               </div>
                               <!-- model button -->
-                              <button class="btn btn-rose">Add new Brand</button>
+                              
                             <!--  -->
                               <div class="form-group">
                                 <label for="exampleFormControlSelect1">Model</label>
-                                <select class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
+                                <select class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1" name="model">
+                                  <option>Land cruiser</option>
+                                  <option>Axela</option>
+                                  <option>NSX</option>
+                                  <option>Xtrail</option>
+                                  <option>Alto</option>
                                 </select>
                               </div>
-                              <button class="btn btn-rose">Add new Model</button>
+                              
                               <br>
                               <br>
                               <br>
 
                               <div class="form-group bmd-form-group">
                                 <label class="bmd-label-static">Photo</label>
-                                <input type="text" class="form-control" placeholder="Enter Link Of Photo">
+                                <input type="text" class="form-control" placeholder="Enter Link Of Photo" name="photo">
                               </div>
                               
                               <br>
-                              <button type="submit" class="btn btn-primary">Submit</button>
+                              <button type="submit" class="btn btn-primary" name="save">Submit</button>
+                              </form>
                 </div>
 
                 <!-- two -->
 
                 <div class="tab-pane" id="link2" aria-expanded="false">
 
-                    <form class="form-inline ml-auto">
+               <!--     <form class="form-inline ml-auto" action="SearchPartServlet" method="post">-->
                         <div class="form-group no-border">
-                          <input type="text" class="form-control" placeholder="Search">
+                          <input type="text" class="form-control" placeholder="Search" name="search" id="inputSearch" >
                         </div>
-                        <button type="submit" class="btn btn-white btn-just-icon btn-round">
+                        <button type="submit" class="btn btn-white btn-just-icon btn-round" id="btnSearch">
                             <i class="material-icons">search</i>
                         </button>
-                    </form>
+                <!--    </form> --> 
                         <div class="table-responsive">
                                 <table class="table table-shopping">
                                     <thead>
                                         <tr>
-                                            <th class="text-center"></th>
+                                        	 <th class="th-description">Id</th>
+                                            <th class="text-center">Photo</th>
                                             <th>Product</th>
                                             <th class="th-description">Brand</th>
                                             <th class="th-description">Model</th>
+                                            <th class="text-right">qty</th>
                                             <th class="text-right">Price</th>
                                              
                                             <th></th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="img-container">
-                                                    <img src="http://westernautowrecking.com/wp-content/uploads/2015/12/Used-Auto-Parts.jpg" alt="..." name="photo">
-                                                </div>
+                                    <tbody id="parttbody">
+                                     
+                                     <%
+                                     	PartManagement pm = new PartManagementImpl();
+                                		
+                                		ArrayList<Part> pl = pm.getAllParts();
+                                		
+                                		for(Part p : pl){
+                                     %>
+                                         <tr>
+                                            <td ><%=p.getPartId() %></td>
+                                            <td >
+                                               <a href="<%=p.getPhoto()%>"  class="rounded img-fluid"></a> 
+                                               
                                             </td>
                                             <td class="td-name">
-                                                <a href="#jacket">Car Parts</a>
-                                                <br><small>&amp;</small>
+                                               <%=p.getPartName() %>
                                             </td>
                                             <td>
-                                                ZUZUKI
+                                               <%=p.getBrand() %>
                                             </td>
-                                            <td>
-                                                abcd
+                                       		<td> <%=p.getModel() %></td>
+                                       		 <td class="td-number">
+                                                <%=p.getQty() %>
                                             </td>
                                             <td class="td-number">
-                                                <small>&#x20AC;</small>1000
+                                                <%=p.getPrice() %>
                                             </td>
                                             <td class="td-actions">
-                                                <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-simple">
-                                                    <i class="material-icons">close</i>
-                                                </button>
+                                            <form action="DeletePartServlet" method="post">
+                                                 <input type="hidden" name="delete" value=" <%=p.getPartId() %> ">
+                                                <input type="submit" class="btn btn-danger"title="Remove item" value="Delete"> 
+                                                </form>
                                             </td>
-                                        </tr>
+                                           
+                                        </tr> 
+                                        <%} %>
                                     </tbody>
+                                    
                                 </table>
                               </div>
 
@@ -239,6 +256,7 @@
                 <!-- three -->
                 <div class="tab-pane" id="link3" aria-expanded="false">
 
+                   
                     <div class="alert alert-info">
                         <div class="container">
                           <div class="alert-icon">
@@ -251,32 +269,45 @@
                     <table class="table">
                         <thead>
                             <tr>
+                            
                                 <th class="text-center">ID</th>
                                 <th>Name</th>
                                 <th class="text-center">Price</th>
                                 <th class="text-center">New Price</th>
+                                <th class="text-center">Update</th>  
                             </tr>
                         </thead>
                         <tbody>
+                         			 <%
+                                     	PartManagement price = new PartManagementImpl();
+                                		
+                                		ArrayList<Part> pp = price.getPartPrice();
+                                		
+                                		for(Part p : pp){
+                                     %>
                             <tr>
-                                <td class="text-center">1</td>
-                                <td>Andrew Mike</td>
-                                <td class="text-center">1000</td>
+                            
+                                <td class="text-center"><%=p.getPartId() %></td>
+                                <td><%=p.getPartName() %></td>
+                                <td class="text-center"><%=p.getPrice() %></td>
                                 
                                 <td>
-                                    <form>
+                                    <form class="form" action="UpdetePartPriceServlet" method="post">
                                     <div class="form-row">
                                       <div class="col">
-                                        <input type="text" class="form-control" placeholder="Enter new Price">
+                                        <input type="text" class="form-control" placeholder="Enter new Price"name="updatePrice" id="price">
                                       </div>
                                     </div>
+                                    <input type="hidden" name="UpdatePartPrice" value="<%=p.getPartId() %>">
+                                     <input type="submit" class="btn btn-success" value="Update" class="text-center" onclick="setPrice()">
                                   </form>
+                                  
                                 </td>
-                            </tr>    
+                                 
+                            </tr>
+                            <%} %>    
                         </tbody>
                     </table>
-
-                     
             </div>
 
 
@@ -384,6 +415,36 @@
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
 <script src="assets/js/material-kit.min1036.js?v=2.1.1" type="text/javascript"></script>
 
+<script>
+$('#btnSearch').click(function () {
+	  var searchPartName=$('#inputSearch').val();
+	  $.ajax(
+		        {
+		        	
+		            type: "post",
+		            url: "http://localhost:8080/VehicleServicesAndFuelManagementSystem/SearchPartServlet",
+		            
+		            data: {
+		            	searchPartName: searchPartName,
+		                
+		            },
+		            success: function (response) {
+					 $('#parttbody').html(response);
+		            },
+		            error: function () {
+
+		            }
+		        }
+		    );
+	  
+});
+</script>
+<script type="text/javascript">
+function setPrice(){
+	var value = $("#price").val();
+	console.log('hhh'+value);
+}
+</script>
 </body>
 
 </html>

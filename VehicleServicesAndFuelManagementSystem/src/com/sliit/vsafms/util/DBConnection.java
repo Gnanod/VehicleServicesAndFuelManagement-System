@@ -15,6 +15,7 @@ private static Connection connection;
 	private DBConnection() {
 		
 	}
+	
 	public static Connection getConnection()  {
 		if(connection==null) {
 			
