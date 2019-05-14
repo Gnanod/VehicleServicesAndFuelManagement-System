@@ -1,8 +1,8 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.sliit.vsafms.model.Vehicle"%>
 <%@page import="com.sliit.vsafms.service.impl.VehicleServiceImpl"%>
 <%@page import="com.sliit.vsafms.service.VehicleService"%>
 <%@page import="com.sliit.vsafms.model.Customer"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="com.sliit.vsafms.service.CustomerService"%>
 <%@page import="com.sliit.vsafms.service.impl.CustomerServiceImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -27,6 +27,18 @@
         </style>
 </head>
 
+<%
+
+String  logSession = (String)session.getAttribute("Login");
+
+if (session.getAttribute("Login")!="Logged" && session.getAttribute("position")!="Reception") {
+	response.sendRedirect("login.jsp");
+}
+
+
+%>
+
+
 
 
 <body>
@@ -46,15 +58,20 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item pad">
-                    <a href="index.html " class="nav-link" >
+                    <a href="index.jsp " class="nav-link" >
                         <i class="material-icons">home</i> Home
                     </a>
                 </li>
 
-                <li class="nav-item  ">
-                    <a href="Movies.html" class="nav-link" >
+                 <li class="dropdown nav-item">
+                    <a href="#pablo" class="profile-photo dropdown-toggle nav-link" data-toggle="dropdown">
                         <i class="material-icons">business_center</i> Shedule
                     </a>
+                    <div class="dropdown-menu dropdown-menu-left">
+                        <a href="addJobShedule.jsp" class="dropdown-item">JobOrder</a>
+                        <a href="payment.jsp" class="dropdown-item">Payment</a>
+                        <a href="#pablo" class="dropdown-item">Parts</a>
+                    </div>
                 </li>
                 <li class="nav-item pad">
                     <a href="#" class="nav-link" >
@@ -62,18 +79,21 @@
                     </a>
                 </li>
                 <li class="nav-item pad">
-                    <a href="#" class="nav-link" >
+                    <a href="payment.jsp" class="nav-link" >
                         <i class="material-icons">business_center</i> Fuel
                     </a>
                 </li>
+<%
 
 
-                <li class="button-container nav-item iframe-extern pad" style="right: 100px;">
-                    <a href="login.html" target="_blank" class="btn  btn-rose   btn-round btn-block" >
-                        <i class="material-icons">fingerprint</i>  LOGIN
-                    </a>
-                </li>
-                <li class="dropdown nav-item">
+
+if (session.getAttribute("Login")=="Logged") {
+	
+
+
+
+%>
+				<li class="dropdown nav-item">
                     <a href="#pablo" class="profile-photo dropdown-toggle nav-link" data-toggle="dropdown">
                         <div class="profile-photo-small">
                             <img src="./assets/img/faces/avatar.jpg" alt="Circle Image" class="rounded-circle img-fluid" >
@@ -81,11 +101,22 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-left">
 
-                        <a href="#pablo" class="dropdown-item">ViewProfile</a>
-                        <a href="#pablo" class="dropdown-item">EditProfile</a>
-                        <a href="#pablo" class="dropdown-item">LogOut</a>
+                        <!--  <a href="#pablo" class="dropdown-item">ViewProfile</a>-->
+                        <!--  <a href="#pablo" class="dropdown-item">EditProfile</a>-->
+                        <a href="LogOut" class="dropdown-item">LogOut</a>
                     </div>
                 </li>
+ <%
+}else{
+ %>
+
+                <li class="button-container nav-item iframe-extern pad" style="right: 100px;">
+                    <a href="login.jsp" target="_blank" class="btn  btn-rose   btn-round btn-block" >
+                        <i class="material-icons">fingerprint</i>  LOGIN
+                    </a>
+                </li>
+                
+ <%} %>               
 
             </ul>
         </div>
@@ -398,7 +429,7 @@
                                 <%
                                 
                                 CustomerService customerService= new CustomerServiceImpl();
-                                
+                               
                                 ArrayList<Customer> list = customerService.getAllCustomer();
                          
                                 	for(Customer c:list){
@@ -762,6 +793,7 @@
 	  var favorite = [];
       $.each($("input[name='check1']:checked"), function(){            
           favorite.push($(this).val());
+          console.log($(this).val());
       });
     //  JSON.stringify(favorite);
      // cosole.log( Json.stringify(favorite));
