@@ -22,7 +22,7 @@ private static Connection connection;
 			
 //			try {
 //				
-//				
+//				fhfjhf
 //				Class.forName(properties.getProperty(CommonConstants.DRIVER_NAME));
 //				connection= DriverManager.getConnection(properties.getProperty(CommonConstants.URL)
 //						,properties.getProperty(CommonConstants.USERNAME),properties.getProperty(CommonConstants.PASSWORD));
