@@ -1,23 +1,17 @@
-create database VehicleServicesAndFuelManagement;
-
-create table user(
-
-	userId int NOT NULL AUTO_INCREMENT,
-	userNic varchar(100),
-	userPassword varchar(100),
-	position varchar(100),
-	primary Key(userId)
-
+use VehicleServicesAndFuelManagement;
+create table part(
+	partId int,
+	partName varchar(100),
+	price real,
+    qut int,
+    model varchar(100),
+    brand varchar(100),
+    photo varchar(225),
+	primary Key(partId)
 );
 
-Insert into user values(0,'951960055V','123','receptionist');
-
- select position from user where userNic='951960055V' && userPassword='123';
-
-
-
 create table customer(
-	customerId int NOT NULL AUTO_INCREMENT,
+	customerId int,
 	customerName varchar(100),
 	customerPhone varchar(100),
 	customerEmail varchar(100),
@@ -51,52 +45,6 @@ create table jobOrder(
 	CONSTRAINT FK_JOBID FOREIGN KEY (customerId) REFERENCES customer(customerId)
 );
 
-create table supplier(
-	supplierId int NOT NULL AUTO_INCREMENT,
-	supplierName varchar(100),
-	supplierPhone varchar(100),
-	supplierEmail varchar(100),
-	supplierAddress varchar(100),
-	primary Key(supplierId)
-);
-Insert into  supplier values(0,'Gnanod','0772219800','asd@gmail.com','Galle');
-Insert into supplier  values (0,'Chathura','0772219800','ds@gmail.com','Galle');
-Insert into  supplier values(0,'Akalanka','0723459800','io@gmail.com','Galle');
-Insert into  supplier values(0,'Madu','0771239800','po@gmail.com','Galle');
-
-create table fuel(
-	fuelId int not null AUTO_INCREMENT,
-	fuleName varchar(100),
-	supplierId int,
-	qty varchar(100),
-	price varchar(100),
-	brand varchar(100),
-	primary Key(fuelId),
-	CONSTRAINT FK_fuel FOREIGN KEY (supplierId) REFERENCES supplier(supplierId)
-
-);
-
-
-
-Insert into  fuel values(0,'Type1',1,'1000','127','brand1');
-Insert into  fuel values(0,'Type2',2,'1005','137','brand2');
-Insert into  fuel values(0,'Type3',1,'2000','167','brand3');
-Insert into  fuel values(0,'Type4',3,'4000','107','brand4');
-Insert into  fuel values(0,'Type5',1,'5000','147','brand5');
-
-create table payment(
-	paymentId int not null AUTO_INCREMENT,
-	total double,
-	primary key(paymentId)
-);
-
-create table fuelPayment(
-	fuelPaymentId int not null AUTO_INCREMENT,
-	paymentId int,
-	volume real,
-	CONSTRAINT FK_Payment FOREIGN KEY (paymentId) REFERENCES payment(paymentId),
-	primary key(fuelPaymentId)
-);
 
 create table specialService(
 	specialServiceId int NOT NULL AUTO_INCREMENT,
@@ -123,5 +71,3 @@ select DISTINCT v.EngineNumber,v.VehicleClass,v.Brand,v.Model,v.YearOfManufactur
 Insert into vehicle values(0,'480967f','BAC3302','Class A','Honda','Civic','2018','2018-06-19','Petrol',1);
 Insert into vehicle values(0,'757967f','BAE3602','Class A','Toyota','Prius','2017','2018-06-18','Petrol',1);
 Insert into vehicle values(0,'545967f','BAE7677','Class A','Toyota','Aqua','2019','2018-07-19','Petrol',2);
-
-hjjhg

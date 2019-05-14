@@ -23,16 +23,6 @@
 
 </head>
 
-<%
-
-String  logSession = (String)session.getAttribute("Login");
-
-if (session.getAttribute("Login")!="Logged" && session.getAttribute("position")!="Reception") {
-	response.sendRedirect("login.jsp");
-}
-
-
-%>
 
 
 <body>
@@ -64,8 +54,8 @@ if (session.getAttribute("Login")!="Logged" && session.getAttribute("position")!
                         <i class="material-icons">business_center</i> Shedule
                     </a>
                     <div class="dropdown-menu dropdown-menu-left">
-                        <a href="addJobShedule.jsp" class="dropdown-item">JobOrder</a>
-                        <a href="payment.jsp" class="dropdown-item">Payment</a>
+                        <a href="#pablo" class="dropdown-item">JobOrder</a>
+                        <a href="#pablo" class="dropdown-item">Payment</a>
                         <a href="#pablo" class="dropdown-item">Parts</a>
                     </div>
                 </li>
@@ -81,37 +71,24 @@ if (session.getAttribute("Login")!="Logged" && session.getAttribute("position")!
                 </li>
 
 
-<% 
-                if (session.getAttribute("Login")=="Logged") {
-	
+                <li class="button-container nav-item iframe-extern pad" style="right: 100px;">
+                    <a href="login.html" target="_blank" class="btn  btn-rose   btn-round btn-block" >
+                        <i class="material-icons">fingerprint</i>  LOGIN
+                    </a>
+                </li>
 
 
-
-%>
-				<li class="dropdown nav-item">
+                <li class="dropdown nav-item">
                     <a href="#pablo" class="profile-photo dropdown-toggle nav-link" data-toggle="dropdown">
                         <div class="profile-photo-small">
                             <img src="./assets/img/faces/avatar.jpg" alt="Circle Image" class="rounded-circle img-fluid" >
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-left">
-
-                        <!--  <a href="#pablo" class="dropdown-item">ViewProfile</a>-->
-                        <!--  <a href="#pablo" class="dropdown-item">EditProfile</a>-->
-                        <a href="LogOut" class="dropdown-item">LogOut</a>
+                        <a href="#pablo" class="dropdown-item">LogOut</a>
                     </div>
                 </li>
- <%
-}else{
- %>
 
-                <li class="button-container nav-item iframe-extern pad" style="right: 100px;">
-                    <a href="login.jsp" target="_blank" class="btn  btn-rose   btn-round btn-block" >
-                        <i class="material-icons">fingerprint</i>  LOGIN
-                    </a>
-                </li>
-                
- <%} %>  
             </ul>
         </div>
     </div>
@@ -154,8 +131,8 @@ if (session.getAttribute("Login")!="Logged" && session.getAttribute("position")!
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-6 col-sm-12" style="margin-left: -100px;margin-top:15px">
-                            <select class="selectpicker" data-style="select-with-transition" data-size="4" id="fuel">
-                                
+                            <select class="selectpicker" data-style="select-with-transition" title="Please Select One " data-size="4" id="fuel">
+                                <option disabled>Choose Fuel</option>
                                 
                                 <%
  								FuelService fuelService = new FuelServiceImpl();                              
@@ -164,7 +141,7 @@ if (session.getAttribute("Login")!="Logged" && session.getAttribute("position")!
                                 
                                 	for(Fuel c:fuelList){
                                 %>
-                                <option value="<%=c.getFuleName() %>" id="firstValue"><%=c.getFuleName() %></option>
+                                <option value="<%=c.getFuleName() %>"><%=c.getFuleName() %></option>
                                 <%
                                 	}
                                 %>
@@ -178,8 +155,8 @@ if (session.getAttribute("Login")!="Logged" && session.getAttribute("position")!
                                 <h4>Price</h4>
                             </div>
                         </div>
-                        <div class="col-lg-5 col-md-6 col-sm-12" style="margin-left: -100px;margin-top:15px" id="price">
-                            
+                        <div class="col-lg-5 col-md-6 col-sm-12" style="margin-left: -100px;margin-top:15px">
+                            <input type="text" class="form-control" id="price">
                         </div>
 
                     </div>
@@ -194,7 +171,7 @@ if (session.getAttribute("Login")!="Logged" && session.getAttribute("position")!
                             <input type="text" class="form-control" id="volume">
                         </div>
                         <div class="col-lg-2 " >
-                            <button class="btn btn-primary" style="margin-top: 10px" id="btnTotal">Total</button>
+                            <button class="btn btn-primary" style="margin-top: 10px">Total</button>
                         </div>
                     </div>
 
@@ -205,10 +182,10 @@ if (session.getAttribute("Login")!="Logged" && session.getAttribute("position")!
                             </div>
                         </div>
                         <div class="col-lg-5 " style="margin-left: -100px;margin-top:15px">
-                            <input type="text" class="form-control" id="totalPrice">
+                            <input type="text" class="form-control" id="total">
                         </div>
                         <div class="col-lg-2 " >
-                            <button class="btn btn-primary" style="margin-top: 10px" id="prinBill">PrintBill</button>
+                            <button class="btn btn-primary" style="margin-top: 10px">PrintBill</button>
                         </div>
                     </div>
                 </div>
@@ -231,9 +208,6 @@ if (session.getAttribute("Login")!="Logged" && session.getAttribute("position")!
                         </div>
                     </div>
 
-                </div>
-                
-                <div id="Message">
                 </div>
             </div>
         </div>
@@ -339,106 +313,6 @@ if (session.getAttribute("Login")!="Logged" && session.getAttribute("position")!
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
 <script src="assets/js/material-kit.min1036.js?v=2.1.1" type="text/javascript"></script>
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>
-
-<script>
-
-var fuelName=null;
-
-$('#btnTotal').click(function(){
-	
-	var volume = $('#volume').val();
-	var price = $('#input').val();
-	var total = volume*price;
-	document.getElementById("totalPrice").value = total;
-	
-});
-
-$('#prinBill').click(function(){
-	var volume = $('#volume').val();
-	var price = $('#input').val();
-	var total = $('#totalPrice').val();
-	
-	 $.ajax(
-		        {
-		            type: "post",
-		            url: "http://localhost:8081/VehicleServicesAndFuelManagementSystem/AddPaymentServlet",
-		            data: {
-		            	
-		            	total:total,
-		            	price:price,
-		            	volume:volume,
-		            	fuelName:fuelName,
-		                
-		            },
-		            success: function (response) {
-						$('#Message').html(response);
-						document.getElementById("totalPrice").value =null;
-						document.getElementById("volume").value =null;
-		            },
-		            error: function () {
-
-		            }
-		        }
-		    );
-	
-});
-$(document).ready(function(){
-	
-	
-        var selectedType = $('#fuel').children("option:selected").val();
-       
-        fuelName=selectedType;
-        $.ajax(
-		        {
-		            type: "post",
-		            url: "http://localhost:8081/VehicleServicesAndFuelManagementSystem/PaymentServlet",
-		            data: {
-		            	
-		            	selectedType: selectedType,
-		                
-		            },
-		            success: function (response) {
-						$('#price').html(response);
-		            },
-		            error: function () {
-
-		            }
-		        }
-		    );
-    
-});
-
-$(document).ready(function(){
-    $("#fuel").change(function(){
-        var selectedType = $(this).children("option:selected").val();
-        fuelName=selectedTpe;
-        $.ajax(
-		        {
-		            type: "post",
-		            url: "http://localhost:8081/VehicleServicesAndFuelManagementSystem/PaymentServlet",
-		            
-		            data: {
-		            	
-		            	selectedType: selectedType,
-		                
-		            },
-		            success: function (response) {
-						$('#price').html(response);
-		            },
-		            error: function () {
-
-		            }
-		        }
-		    );
-    });
-});
-
-
-</script>
-
 </body>
-
-
 
 </html>

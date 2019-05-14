@@ -16,7 +16,7 @@ import com.sliit.vsafms.service.CustomerService;
 import com.sliit.vsafms.service.impl.CustomerServiceImpl;
 
 /**
- * Servlet implementation class searchCustomerAjaxServlet @Gnanod
+ * Servlet implementation class searchCustomerAjaxServlet
  */
 @WebServlet(urlPatterns ="/searchCustomerAjax")
 public class searchCustomerAjaxServlet extends HttpServlet {

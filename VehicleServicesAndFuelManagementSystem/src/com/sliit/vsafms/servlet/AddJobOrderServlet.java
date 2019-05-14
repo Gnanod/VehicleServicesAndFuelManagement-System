@@ -24,7 +24,7 @@ import com.sliit.vsafms.service.impl.VehicleServiceImpl;
 import com.sliit.vsafms.util.DBConnection;
 
 /**
- * Servlet implementation class AddJobOrderServlet @Gnanod
+ * Servlet implementation class AddJobOrderServlet
  */
 @WebServlet(urlPatterns="/AddJobOrderServlet")
 public class AddJobOrderServlet extends HttpServlet {

@@ -14,7 +14,7 @@ import com.sliit.vsafms.service.VehicleService;
 import com.sliit.vsafms.service.impl.VehicleServiceImpl;
 
 /**
- * Servlet implementation class DeleteVehicleServlet @Gnanod
+ * Servlet implementation class DeleteVehicleServlet
  */
 @WebServlet(urlPatterns="/DeleteVehicleServlet")
 public class DeleteVehicleServlet extends HttpServlet {
