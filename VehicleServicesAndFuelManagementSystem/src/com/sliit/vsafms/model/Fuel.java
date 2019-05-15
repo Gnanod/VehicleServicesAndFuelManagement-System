@@ -1,64 +1,59 @@
 package com.sliit.vsafms.model;
 
+import java.sql.Date;
+
 public class Fuel {
 	int fuelId ;
 	String fuleName ;
-	String qty;
-	String price;
-	String brand;
+	Double qty;
+	Double price;
+	Date priceUpdateDate;
 	
+	public Fuel(int fuelId, String fuleName, Double qty, Double price, Date priceUpdateDate) {
+		this.fuelId = fuelId;
+		this.fuleName = fuleName;
+		this.qty = qty;
+		this.price = price;
+		this.priceUpdateDate = priceUpdateDate;
+	}
 	public Fuel() {
 		// TODO Auto-generated constructor stub
 	}
-
-	public Fuel(int fuelId, String fuleName, String qty, String price, String brand) {
-		super();
-		this.fuelId = fuelId;
-		this.fuleName = fuleName;
-		this.qty = qty;
-		this.price = price;
-		this.brand = brand;
-	}
-
 	public int getFuelId() {
 		return fuelId;
 	}
-
 	public void setFuelId(int fuelId) {
 		this.fuelId = fuelId;
 	}
-
 	public String getFuleName() {
 		return fuleName;
 	}
-
 	public void setFuleName(String fuleName) {
 		this.fuleName = fuleName;
 	}
-
-	public String getQty() {
+	public Double getQty() {
 		return qty;
 	}
-
-	public void setQty(String qty) {
+	public void setQty(Double qty) {
 		this.qty = qty;
 	}
-
-	public String getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-
-	public void setPrice(String price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
-
-	public String getBrand() {
-		return brand;
+	public Date getPriceUpdateDate() {
+		return priceUpdateDate;
 	}
-
-	public void setBrand(String brand) {
-		this.brand = brand;
+	public void setPriceUpdateDate(Date priceUpdateDate) {
+		this.priceUpdateDate = priceUpdateDate;
 	}
 	
+
+	
+
+
+//		
 	
 }
