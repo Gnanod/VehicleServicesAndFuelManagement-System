@@ -790,8 +790,9 @@ if (session.getAttribute("Login")=="Logged") {
 	  var Dateofregistration =$('#Dateofregistration').val();
 	  var Fueltype =$('#Fueltype').val();
 	  var message =$('#message').val();
-	  var favorite = [];
-      $.each($("input[name='check1']:checked"), function(){            
+	  var favorite ;
+      $.each($("input[name='check1']:checked"), function(){   
+    	  favorute +=favourite;0.32
           favorite.push($(this).val());
           console.log($(this).val());
       });
